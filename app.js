@@ -1,31 +1,42 @@
-
 function GetValue() {
     value1 = parseInt(document.getElementById("value1").value);
     value2 = parseInt(document.getElementById("value2").value);
+
+    if (value1 <= 0 || value2 <= 0) {
+        SetResult("Het ingevoerde getal is te laag!");
+        return false;
+    } else {
+        return true;
+    }
 }
 
 function Sum() {
-    GetValue();
-    result = value1 + value2;
-    SetResult(result);
+    if (GetValue()) {
+        result = value1 + value2;
+        SetResult(result);
+    }
 }
 
 function Multiply() {
-    GetValue();
-    result = value1 * value2;
-    SetResult(result);
+    if (GetValue()) {
+        result = value1 * value2;
+        SetResult(result);
+    }
 }
 
 function Divide() {
-    GetValue();
-    result = value1 / value2;
-    SetResult(result);
+    if (GetValue()) {
+        result = value1 / value2;
+        let rounded = result.toFixed(1);
+        SetResult(rounded);
+    }
 }
 
 function Subtract() {
-    GetValue();
-    result = value1 - value2;
-    SetResult(result);
+    if (GetValue()) {
+        result = value1 - value2;
+        SetResult(result);
+    }
 }
 
 function SetResult(result) {
